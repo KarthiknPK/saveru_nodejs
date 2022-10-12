@@ -218,7 +218,7 @@ app.post("/api/login", async (req, res) => {
 // * T E S T  
 
 app.get("/api/test", auth, (req, res) => {
-    res.status(200).send("Token Works - Yay!");
+    res.status(200).send("Token Working. - Yay!");
 });
 
 
