@@ -222,5 +222,8 @@ app.get("/api/test", auth, (req, res) => {
     res.status(200).send("Token Working. - Yay!");
 });
 
+app.post('/quotes', (req, res) => {
+    console.log("hello from quotes route!");
+});
 
 app.listen(port, () => console.log(`API listening on port ${port}!`));
