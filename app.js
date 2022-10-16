@@ -222,7 +222,7 @@ app.get("/api/test", auth, (req, res) => {
     res.status(200).send("Token Working. - Yay!");
 });
 
-app.post('/quotes', (req, res) => {
+app.post('api/quotes', (req, res) => {
     console.log("hello from quotes route!");
 });
 
