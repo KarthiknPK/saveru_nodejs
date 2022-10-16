@@ -1,14 +1,16 @@
 const express = require('express');
 const app = express();
 require("dotenv").config();
-const port = 3004;
+var port = process.env.PORT || 3004;
 var sqlite3 = require('sqlite3').verbose()
 const cors = require('cors');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 const DBSOURCE = "usersdb.sqlite";
 const auth = require("./middleware");
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -188,7 +190,7 @@ app.post("/api/login", async (req, res) => {
                 user.push(row);                
             })
             
-            var PHash = bcrypt.hashSync(Password, user[0].Salt);
+            var PHash = bcrypt.hashSync(Password, user[0].salt);
        
             if(PHash === user[0].Password) {
                 // * CREATE JWT TOKEN
@@ -215,7 +217,6 @@ app.post("/api/login", async (req, res) => {
 });
 
   
-// * T E S T  
 
 app.get("/api/test", auth, (req, res) => {
     res.status(200).send("Token Working. - Yay!");
