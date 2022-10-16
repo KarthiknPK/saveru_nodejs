@@ -58,7 +58,7 @@ app.use(
     })
 );
 
-//app.get('/', (req, res) => res.send('API Root'));
+app.get('/api/register', (req, res) => res.send('API Root'));
 
 
 //*  G E T   A L L
