@@ -10,13 +10,12 @@ const DBSOURCE = "usersdb.sqlite";
 const auth = require("./middleware");
 var bodyParser = require('body-parser');
 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
 
 let db = new sqlite3.Database(DBSOURCE, (err) => {
     if (err) {
-      // Cannot open database
       console.error(err.message)
       throw err
     } 
