@@ -53,7 +53,7 @@ module.exports = db
 app.use(
     express.urlencoded(),
     cors({
-        origin: 'http://localhost:3000'
+        origin: 'https://saveru.herokuapp.com'
     })
 );
 
