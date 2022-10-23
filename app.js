@@ -97,7 +97,7 @@ app.get("/api/user/:id", (req, res, next) => {
 
 // * R E G I S T E R   N E W   U S E R
 
-app.post("/api/register", async (req, res) => {
+app.post('/api/register', async (req, res) => {
     var errors=[]
     try {
         const { Username, Email, Password } = req.body;
@@ -167,7 +167,7 @@ app.post("/api/register", async (req, res) => {
 
 // * L O G I N
 
-app.post("/api/login", async (req, res) => {
+app.post('/api/login', async (req, res) => {
   
   try {      
     const { Email, Password } = req.body;
@@ -217,7 +217,7 @@ app.post("/api/login", async (req, res) => {
 
   
 
-app.get("/api/test", auth, (req, res) => {
+app.get('/api/test', auth, (req, res) => {
     res.status(200).send("Token Working. - Yay!");
 });
 
